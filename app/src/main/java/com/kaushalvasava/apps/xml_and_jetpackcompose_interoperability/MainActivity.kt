@@ -1,32 +1,42 @@
 package com.kaushalvasava.apps.xml_and_jetpackcompose_interoperability
 
 import android.os.Bundle
-import androidx.appcompat.app.AppCompatActivity
-import androidx.navigation.NavController
-import androidx.navigation.fragment.NavHostFragment
-import androidx.navigation.ui.setupActionBarWithNavController
-import com.kaushalvasava.apps.xml_and_jetpackcompose_interoperability.databinding.ActivityMainBinding
+import androidx.activity.ComponentActivity
+import androidx.activity.compose.setContent
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Surface
+import androidx.compose.material3.Text
+import androidx.compose.runtime.Composable
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.tooling.preview.Preview
+import com.kaushalvasava.apps.xml_and_jetpackcompose_interoperability.ui.theme.ComposeAppTheme
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : ComponentActivity() {
 
-    private lateinit var binding: ActivityMainBinding
-    private lateinit var navController: NavController
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
-        binding = ActivityMainBinding.inflate(layoutInflater)
-        setContentView(binding.root)
-
-        setSupportActionBar(binding.toolbar)
-
-        val navHostFragment =
-            supportFragmentManager.findFragmentById(R.id.nav_host_fragment_content_main) as NavHostFragment
-        navController = navHostFragment.navController
-        setupActionBarWithNavController(navController)
+        setContent {
+            ComposeAppTheme {
+                // A surface container using the 'background' color from the theme
+                Surface(
+                    modifier = Modifier.fillMaxSize(),
+                    color = MaterialTheme.colorScheme.background
+                ) {
+                    Greeting()
+                }
+            }
+        }
     }
+}
 
-    override fun onSupportNavigateUp(): Boolean {
-        return navController.navigateUp()
-                || super.onSupportNavigateUp()
-    }
+@Composable
+fun Greeting() {
+    Text("Hello Compose ")
+}
+
+@Preview
+@Composable
+fun GreetingPreview() {
+    Greeting()
 }
