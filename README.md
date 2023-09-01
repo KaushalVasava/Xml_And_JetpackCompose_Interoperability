@@ -3,9 +3,9 @@ It is project about how to use Jetpack compose inside your existing XML and how 
 
 # Branches:
 - master -> Initial android view project
-- use_jetpack_compose_inside_xml_layout -> Use of Jetpack compose inside Fragment
-- jetpack-compose-init-project -> Initial Jetpack Compose project
-- use_androidview_inside_jetpackcompose -> Use of Android View inside Jetpack compose
+- use-jetpack-compose-inside-xml-layout -> Use of Jetpack compose inside Fragment
+- jetpack-compose-initial-project -> Initial Jetpack Compose project
+- use-android-view-inside-jetpack-compose -> Use of Android View inside Jetpack compose
 
 # Author 
 Kaushal Vasava
