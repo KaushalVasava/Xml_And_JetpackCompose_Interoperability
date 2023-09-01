@@ -17,9 +17,4 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <androidx.compose.ui.platform.ComposeView
-        android:id="@+id/compose_view"
-        tools:composableName ="com.kaushalvasava.apps.xml_and_jetpackcompose_interoperability.SecondFragment.SecondScreenPreview"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
